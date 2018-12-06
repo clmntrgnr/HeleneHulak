@@ -866,7 +866,7 @@ a:active {
     top: 100px;
 }   
 
-.social-media-icons .fa:hover { color: #B0544F; }  
+.social-media-icons .fa:hover { color: #8abeb2; }  
 
 #home-page-cta {
 	padding: 175px 0;
@@ -1662,4 +1662,74 @@ body {
 		margin: 0 2% 15px;
 	}
 
+}
+/* HEADER */
+
+/* header .grid {
+	max-width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+@media(max-width: 768px) {
+	header .grid {
+		flex-direction: column;
+	}
+} */
+
+/* .site-header {
+	max-width: 100%;
+} */
+
+/* .social-media {
+	position: relative;
+	right: auto;
+	top: auto;
+} */
+
+.menu-container {
+	text-align: center;
+}
+
+.menu-container ul{
+	margin: 0;
+}
+
+.menu-container li{
+    list-style: none;
+    position: relative;
+	display: inline-block;
+	text-transform: uppercase;
+    margin-left: 22px;
+	margin-right: 22px;
+	line-height: 18px;
+	padding: 10px 0;
+    font-size: 14px;
+    color: #777;
+    font-weight: 500;
+}
+
+
+.menu-container li:first-child:before {
+    content: none;
+}
+
+.menu-container li:before {
+    position: absolute;
+    top: 44%;
+    left: -33px;
+    width: 20px;
+    height: 3px;
+    background-color: rgba(0,0,0,0.1);
+    content: "";
+}
+
+.menu-container li:hover {
+	color: #8abeb2;
+	cursor: pointer;
+}
+
+a:hover, a:focus, a:active {
+    color: #8abeb2;
 }
