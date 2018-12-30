@@ -26,6 +26,6 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav>
 
-		<?php include('header.html'); ?>		
+		<?php include('header.html'); ?>
 
 	<section id="content" class="site-content">
