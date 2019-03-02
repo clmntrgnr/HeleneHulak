@@ -83,10 +83,10 @@
 	// in the end of the animation the content is shown
 	// a loading indicator will appear for 1 second to simulate a loading period
 	grid3D.prototype._showContent = function( pos ) {
-		if( this.isAnimating ) {
-			return false;
-		}
-		this.isAnimating = true;
+		// if( this.isAnimating ) {
+		// 	return false;
+		// }
+		return false;
 
 		var self = this,
 			loadContent = function() {

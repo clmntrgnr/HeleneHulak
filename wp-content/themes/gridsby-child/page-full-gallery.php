@@ -12,7 +12,7 @@ get_header(); ?>
         <div id="primary" class="content-area">
             <main id="main" class="site-main" role="main">
     
-                <div>
+                <section class="grid3d horizontal" id="grid3d">
 					<div class="grid-wrap">
 					
                     	<div id="gallery-container" class="gridsby infinite-scroll">
@@ -91,22 +91,13 @@ get_header(); ?>
 								while ( $gridsby_query->have_posts() ) : $gridsby_query->the_post();
 										
                 					if ( has_post_format( 'image' )) { 
-									
-										if ( 'option1' == gridsby_sanitize_index_content( get_theme_mod( 'gridsby_post_link_method' ) ) ) : ?> 
-
-      										<figure class="gallery-image">
+									?>
+										<a href="<?php the_permalink(); ?>">
+											<figure class="gallery-image">
 												<?php the_post_thumbnail('gridsby-gallery-thumb'); ?> 
-                            				</figure><!-- gallery-image --> 
-                                
-                           				<?php else : ?>
-                                
-                                			<a href="<?php the_permalink(); ?>">
-                                				<figure class="gallery-image">
-													<?php the_post_thumbnail('gridsby-gallery-thumb'); ?> 
-                            					</figure><!-- gallery-image -->
-                                			</a>
-                                
-                           				<?php endif;  
+											</figure><!-- gallery-image -->
+										</a>
+										<?php
 										
 									}
                 	
@@ -120,7 +111,7 @@ get_header(); ?>
 				
                 <?php get_template_part( 'content', 'animated-posts' ); //Animated Post Content ?> 
                 
-						</div><!-- grid3d --> 
+			</section><!-- grid3d --> 
             
             
             

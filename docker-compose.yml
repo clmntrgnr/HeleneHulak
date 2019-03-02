@@ -25,5 +25,11 @@ services:
        WORDPRESS_DB_HOST: db:3306
        WORDPRESS_DB_USER: wordpress
        WORDPRESS_DB_PASSWORD: wordpress
+   phpmyadmin:
+     image: phpmyadmin/phpmyadmin
+     links:
+          - db:db
+     ports:
+          - "80:81"
 volumes:
     db_data:
