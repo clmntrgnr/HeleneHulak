@@ -32,7 +32,8 @@ Version: 0.1.0
 } */
 
 .menu-container {
-	text-align: center;
+  text-align: center;
+  margin-left: -146px; /*TODO(@laetitia: fix social-media position)*/
 }
 
 .menu-container ul{
@@ -77,6 +78,25 @@ a:hover, a:focus, a:active {
     color: #8abeb2;
 }
 
+.site-header {
+  padding-top: 5px;
+}
+
+.site-header .grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: red;
+}
+
+.social-media {
+  top: auto;
+}
+
+.site-logo img {
+  max-height: 64px;
+}
+
 .gallery-image img,
 .custom-overlay {
   transition: .3s all;
@@ -113,3 +133,48 @@ a:hover, a:focus, a:active {
 	-webkit-filter: blur(2px);
 	filter: blur(2px);
 }
+
+.entry-content {
+  display: flex;
+}
+
+.entry-content img {
+  width: 100%;
+}
+
+.entry-content > *:first-child {
+  flex: 66%;
+  margin-right: 20px;
+}
+
+.entry-content > *:last-child {
+  flex: 33%;
+}
+
+.entry-title .title {
+  width: 100%;
+  text-align: center;
+}
+
+.entry-title:before, .widget-title:before,
+.entry-title:after, .widget-title:after {
+  width: 40%;
+  z-index: 2;
+}
+
+.entry-title:after, .widget-title:after {
+  background-color: #e5e5e5;
+  content: "";
+  height: 1px;
+  right: 0;
+  position: absolute;
+  top: 55%;
+}
+
+.entry-content h6 {
+  text-transform: uppercase;
+  display: block;
+  color: #151515;
+  line-height: 1;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #151515;
