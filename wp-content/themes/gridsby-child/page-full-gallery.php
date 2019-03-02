@@ -95,6 +95,9 @@ get_header(); ?>
 										<a href="<?php the_permalink(); ?>">
 											<figure class="gallery-image">
 												<?php the_post_thumbnail('gridsby-gallery-thumb'); ?> 
+												<div class="custom-overlay">
+													<h2>Show more</h2>
+												</div>
 											</figure><!-- gallery-image -->
 										</a>
 										<?php

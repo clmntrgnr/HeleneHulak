@@ -76,3 +76,40 @@ Version: 0.1.0
 a:hover, a:focus, a:active {
     color: #8abeb2;
 }
+
+.gallery-image img,
+.custom-overlay {
+  transition: .3s all;
+  border-radius: 3px;
+}
+
+
+.gallery-image .custom-overlay {
+	text-align: center;
+	height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);;
+    color: #fff;
+	opacity: 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.custom-overlay h2 {
+	font-size: 1.5em;
+	border: solid 2px;
+	padding: 5px 8px;
+  }
+
+.gallery-image:hover .custom-overlay {
+	opacity: 1;
+}
+
+.gridsby figure:hover img {
+	-webkit-filter: blur(2px);
+	filter: blur(2px);
+}
