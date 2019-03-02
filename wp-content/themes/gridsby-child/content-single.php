@@ -11,6 +11,9 @@
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
+
+            <?php echo get_field('title'); ?>
+
 			<?php the_content(); ?>
 			<!-- <div class="entry-meta"> -->
 				<!-- <span class="meta-block"> <?php the_category(); ?></span> -->
