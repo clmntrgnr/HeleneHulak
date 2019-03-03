@@ -7,19 +7,33 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
     	<header class="entry-header">
-			<?php the_title( '<h1 class="entry-title"><span class="title">', '</span></h1>' ); ?> 
+      <h1 class="entry-title">
+        <span class="title"><?php echo get_field('title'); ?></span>
+      </h1>
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">
-
-            <?php echo get_field('title'); ?>
-
-			<?php the_content(); ?>
-			<!-- <div class="entry-meta"> -->
-				<!-- <span class="meta-block"> <?php the_category(); ?></span> -->
-				<!-- <span class="meta-block"> <?php the_tags(); ?></span> -->
-			<!-- </div> -->
-			<!-- .entry-meta -->
+      <div class="entry-img">
+        <img src=<?php echo get_field('image'); ?>>
+        <div class="entry-description">
+        <?php echo get_field('description'); ?>
+      </div>
+      </div>
+			<div class="custom-details">
+				<div class="attribute">
+				  <h6>Year</h6>
+				  <span><?php echo get_field('year'); ?></span>
+				</div>
+        <div class="attribute">
+				  <h6>Context</h6>
+				  <span><?php echo get_field('context'); ?></span>
+				  <a><?php echo get_field('context_url'); ?></a>
+				</div>
+        <div class="attribute">
+				  <h6>Technical details</h6>
+				  <span><?php echo get_field('technical_details'); ?></span>
+				</div>
+      </div>
 		</div><!-- .entry-content -->
 
 	</article><!-- #post-## -->

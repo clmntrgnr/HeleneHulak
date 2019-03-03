@@ -8,6 +8,10 @@ Version: 0.1.0
 
 /* HEADER */
 
+a:hover {
+  text-decoration: none;
+}
+
 .site-header button{
   border: none;
   color: black;
@@ -90,7 +94,6 @@ a:hover, a:focus, a:active {
 }
 
 .site-header .grid {
-  /* border-bottom: solid 1px lightgrey; */
   padding-left: 0;
   padding-right: 0;
 }
@@ -98,6 +101,8 @@ a:hover, a:focus, a:active {
 .site-logo img {
   width: 210px;
 }
+
+/* HOME */
 
 .gallery-image img,
 .custom-overlay {
@@ -135,6 +140,59 @@ a:hover, a:focus, a:active {
 	-webkit-filter: blur(2px);
 	filter: blur(2px);
 }
+
+/* ARTICLE */
+
+.HH-article {
+  display: flex;
+  align-items: start;
+}
+
+.HH-navigation{
+  flex: 5%;
+}
+
+.HH-navigation.previous {
+  margin-right: 10px;
+}
+
+.HH-navigation.next {
+  margin-left: 10px;
+}
+
+.HH-navigation .nav-previous, 
+.HH-navigation .nav-next {
+  text-align: center;
+}
+
+.HH-navigation i{
+  font-size: 55px;
+  opacity: 0.3;
+}
+
+.HH-navigation .navigation-title {
+  opacity: 0;
+}
+
+.HH-navigation:hover * {
+  color: #8abeb2;
+  cursor: pointer;
+}
+
+.HH-navigation:hover i,
+.HH-navigation:hover .navigation-title {
+  opacity: 1;
+}
+
+.HH-content {
+  flex: 80%;
+}
+
+.HH-next{
+  flex: 5%;
+}
+
+/* CONTENT */
 
 .entry-content {
   display: flex;

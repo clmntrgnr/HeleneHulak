@@ -5,6 +5,45 @@
  * @package gridsby
  */
 
+/**
+ * @todo(@laetitia) Remove this function from this file
+ */
+if ( ! function_exists( 'gridsby_the_post_navigationPrevious' ) ) :
+  function gridsby_the_post_navigationPrevious() { 
+    $previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+
+    if ( ! $previous ) {
+      return;
+    }
+    ?>
+    <nav role="navigation">
+      <?php
+        previous_post_link( '%link', '<div class="nav-previous"><i class="fa fa-angle-left"></i><div class="navigation-title">%title</div></div>' );
+      ?>
+    </nav><!-- .navigation -->
+    <?php
+  }
+endif;
+/**
+ * @todo(@laetitia) Remove this function from this file
+ */
+if ( ! function_exists( 'gridsby_the_post_navigationNext' ) ) :
+  function gridsby_the_post_navigationNext() { 
+    $next     = get_adjacent_post( false, '', false );
+
+    if ( ! $next ) {
+      return;
+    }
+    ?>
+    <nav role="navigation">
+        <?php
+          next_post_link( '%link', '<div class="nav-next"><i class="fa fa-angle-right"></i><div class="navigation-title">%title</div></div>' );
+        ?>
+    </nav><!-- .navigation -->
+    <?php
+  }
+endif;
+
 get_header(); ?>
 
 <div class="grid grid-pad">
@@ -19,17 +58,18 @@ get_header(); ?>
             <main id="main" class="site-main" role="main">
     
             <?php while ( have_posts() ) : the_post(); ?>
-                <?php gridsby_the_post_navigation(); ?> 
-    
-                <?php get_template_part( 'content', 'single' ); ?>
-    
-    
-                <?php
-                    // If comments are open or we have at least one comment, load up the comment template
-                    if ( comments_open() || '0' != get_comments_number() ) :
-                        comments_template();
-                    endif;
-                ?>
+              <div class="HH-article">
+                <div class="HH-navigation previous"><?php gridsby_the_post_navigationPrevious(); ?></div>
+                <div class="HH-content"><?php get_template_part( 'content', 'single' ); ?></div>
+                <div class="HH-navigation next"><?php gridsby_the_post_navigationNext(); ?></div>
+              </div>
+
+              <?php
+                  // If comments are open or we have at least one comment, load up the comment template
+                  if ( comments_open() || '0' != get_comments_number() ) :
+                      comments_template();
+                  endif;
+              ?>
     
             <?php endwhile; // end of the loop. ?>
     
