@@ -246,3 +246,21 @@ a:hover, a:focus, a:active {
 .attribute {
   margin-bottom: 2em;
 }
+
+/* FULLWIDTH PAGES */
+
+.HH-about .page-content{
+  display: flex;
+}
+
+.HH-about .page-content .entry-img{
+  flex: 45%;
+}
+
+.HH-about .page-content .entry-description{
+  flex: 55%;
+}
+
+.HH-about .page-content .entry-contact{
+  font-weight: bold;
+}
