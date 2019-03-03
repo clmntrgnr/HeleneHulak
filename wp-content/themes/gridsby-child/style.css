@@ -8,32 +8,28 @@ Version: 0.1.0
 
 /* HEADER */
 
-/* header .grid {
-	max-width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+.site-header button{
+  border: none;
+  color: black;
+  font-size: 20px;
 }
 
-@media(max-width: 768px) {
-	header .grid {
-		flex-direction: column;
-	}
-} */
-
-/* .site-header {
-	max-width: 100%;
-} */
-
-/* .social-media {
+.social-media {
 	position: relative;
 	right: auto;
-	top: auto;
-} */
+  top: auto;
+  margin-top: 10px;
+}
+
+@media(min-width: 990px) {
+  .social-media {
+    max-width: 110px;
+    margin-top: 0;
+  }
+}
 
 .menu-container {
-  text-align: center;
-  margin-left: -146px; /*TODO(@laetitia: fix social-media position)*/
+  justify-content: center;
 }
 
 .menu-container ul{
@@ -41,17 +37,17 @@ Version: 0.1.0
 }
 
 .menu-container li{
-    list-style: none;
-    position: relative;
-	display: inline-block;
-	text-transform: uppercase;
-    margin-left: 22px;
-	margin-right: 22px;
-	line-height: 18px;
-	padding: 10px 0;
-    font-size: 14px;
-    color: #777;
-    font-weight: 500;
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  margin-left: 22px;
+  margin-right: 22px;
+  line-height: 18px;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #777;
+  font-weight: 500;
 }
 
 
@@ -79,22 +75,28 @@ a:hover, a:focus, a:active {
 }
 
 .site-header {
-  padding-top: 5px;
+  padding-top: 20px;
+}
+
+.site-branding {
+  align-items: center;
+}
+
+@media(max-width: 991px) {
+  .site-branding {
+    flex: 100;
+    margin-left: 8%;
+  }
 }
 
 .site-header .grid {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: red;
-}
-
-.social-media {
-  top: auto;
+  /* border-bottom: solid 1px lightgrey; */
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .site-logo img {
-  max-height: 64px;
+  width: 210px;
 }
 
 .gallery-image img,
@@ -140,14 +142,15 @@ a:hover, a:focus, a:active {
 
 .entry-content img {
   width: 100%;
+  height: auto;
 }
 
-.entry-content > *:first-child {
+.entry-content > *:first-child { /* img and description */
   flex: 66%;
   margin-right: 20px;
 }
 
-.entry-content > *:last-child {
+.entry-content > *:last-child {  /* Details */ 
   flex: 33%;
 }
 
@@ -158,7 +161,7 @@ a:hover, a:focus, a:active {
 
 .entry-title:before, .widget-title:before,
 .entry-title:after, .widget-title:after {
-  width: 40%;
+  width: 25%;
   z-index: 2;
 }
 
@@ -178,3 +181,10 @@ a:hover, a:focus, a:active {
   line-height: 1;
   padding-bottom: 10px;
   border-bottom: 1px solid #151515;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.attribute {
+  margin-bottom: 2em;
+}
