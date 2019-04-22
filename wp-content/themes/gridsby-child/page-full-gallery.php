@@ -6,6 +6,27 @@
  */
 
 get_header(); ?>
+<div class="test">
+	<div class="HH-title">Hé coucou je suis LN</div>
+	<div class="HH-news">
+		<?php
+			$arguments = array( 
+				'post_type' => 'post',
+				'tax_query' =>
+					array(
+						'taxonomy' => 'post_format',
+						'field' => 'slug',
+				));
+
+			$gridsby_query = new WP_Query( $arguments ); 
+
+			while ( $gridsby_query->have_posts() ) : $gridsby_query->the_post();
+				if (!has_post_format( 'image' )) {
+					get_template_part( 'content' );
+				}
+		endwhile; ?>
+	</div>
+	</div>
 
 <div class="grid grid-pad">
 	<div class="col-1-1 content-wrapper"> 
@@ -96,7 +117,7 @@ get_header(); ?>
 											<figure class="gallery-image">
 												<?php the_post_thumbnail('gridsby-gallery-thumb'); ?> 
 												<div class="custom-overlay">
-													<h2>Show more</h2>
+													<h2></h2>
 												</div>
 											</figure><!-- gallery-image -->
 										</a>
