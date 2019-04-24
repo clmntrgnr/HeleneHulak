@@ -5,8 +5,7 @@
 ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	
-    	<header class="entry-header">
+    <header class="entry-header">
       <h1 class="entry-title">
         <span class="title"><?php echo get_field('title'); ?></span>
       </h1>
