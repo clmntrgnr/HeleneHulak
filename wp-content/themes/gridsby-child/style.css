@@ -10,7 +10,6 @@ Version: 0.1.0
 
 .site-header {
   position: absolute;
-  /* height: 50px; */
   width: 100%;
   min-width: 100%;
   max-width: 100%;
@@ -160,6 +159,17 @@ Version: 0.1.0
 	filter: blur(2px);
 }
 
+/* PROJECTS */
+
+.HH-project a {
+  color: #f10554 !important;
+}
+
+.HH-project a:hover {
+  color: #333 !important;
+  text-decoration: none;
+}
+
 /* ARTICLE */
 .HH-article {
   display: flex;
@@ -241,13 +251,14 @@ Version: 0.1.0
   z-index: 2;
 }
 
+.entry-title:before, .widget-title:before,
 .entry-title:after, .widget-title:after {
-  background-color: #e5e5e5;
+  background-color: #333;
   content: "";
   height: 1px;
   right: 0;
   position: absolute;
-  top: 55%;
+  top: 28px;
 }
 
 .entry-content h6 {
