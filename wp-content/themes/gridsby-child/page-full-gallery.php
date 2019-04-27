@@ -6,27 +6,34 @@
  */
 
 get_header(); ?>
-<div class="test">
-	<div class="HH-title">Hé coucou je suis LN</div>
-	<div class="HH-news">
-		<?php
+<?php
+	if ( get_the_ID() == 1883) { 
+	?>
+	<div class="HH-banner">
+		<div class="HH-title">Hé coucou je suis LN</div>
+		<div class="HH-news">
+			<?php
 			$arguments = array( 
-				'post_type' => 'post',
-				'tax_query' =>
-					array(
-						'taxonomy' => 'post_format',
-						'field' => 'slug',
-				));
+			'post_type' => 'post',
+			'tax_query' =>
+			array(
+			'taxonomy' => 'post_format',
+			'field' => 'slug',
+			));
 
 			$gridsby_query = new WP_Query( $arguments ); 
 
 			while ( $gridsby_query->have_posts() ) : $gridsby_query->the_post();
-				if (!has_post_format( 'image' )) {
-					get_template_part( 'content' );
-				}
-		endwhile; ?>
+			if (!has_post_format( 'image' )) {
+			get_template_part( 'content' );
+			}
+			endwhile; ?>
+		</div>
 	</div>
-	</div>
+	<?php
+			
+		}
+?>
 
 <div class="grid grid-pad">
 	<div class="col-1-1 content-wrapper"> 
