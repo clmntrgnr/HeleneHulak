@@ -10,29 +10,57 @@
         <span class="title"><?php echo get_field('title'); ?></span>
       </h1>
 		</header><!-- .entry-header -->
-		<div class="entry-content">
-			<div class="custom-details">
+
+		<div class="entry-content HH-content">
+
+			<div class="HH-images">
+					<?php
+						// check if the repeater field has rows of data
+						if( have_rows('images') ):
+							// loop through the rows of data
+								while ( have_rows('images') ) : the_row(); ?>
+										<div class="HH-image">
+											<div data-toggle="modal" data-target="#myModal">
+												<img src=<?php the_sub_field('image') ?> />												
+											</div>
+										</div>
+								<?php endwhile;
+						endif;
+					?>
+					<?php
+						// check if the repeater field has rows of data
+						if( have_rows('images') ):
+							// loop through the rows of data
+								while ( have_rows('images') ) : the_row(); ?>
+										<!-- Modal -->
+										<!-- <div class="modal fade" id="myModal" role="dialog">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<img class="HH-image-full" src=<?php the_sub_field('image') ?> />												
+												</div>
+											</div>
+										</div> -->
+								<?php endwhile;
+						endif;
+					?>
+					<div class="HH-video">
+						<?php the_field('oembed'); ?>
+					</div>
+			</div>
+
+			<div class="HH-text">
+				<div>
+					<?php echo get_field('year'); ?>
+				</div>
 				<div class="attribute">
-				  <span><?php echo get_field('year'); ?></span>
+					<?php echo get_field('technical_details'); ?>
 				</div>
-        <div class="attribute">
-				  <a href=<?php echo get_field('context_url'); ?> target="_blank"><?php echo get_field('context'); ?></a>
+				<div class="entry-description attribute">
+					<?php echo get_field('description'); ?>
 				</div>
-        <div class="attribute">
-				  <span><?php echo get_field('technical_details'); ?></span>
+				<div class="attribute">
+					<a href=<?php echo get_field('context_url'); ?> target="_blank"><?php echo get_field('context'); ?></a>
 				</div>
-				<div class="entry-description">
-        	<?php echo get_field('description'); ?>
-				</div>
-				<?php
-				// check if the repeater field has rows of data
-				if( have_rows('images') ):
-					// loop through the rows of data
-						while ( have_rows('images') ) : the_row(); ?>
-								<img src=<?php the_sub_field('image') ?> />
-						<?php endwhile;
-				endif;
-			?>
 			</div>
 		</div><!-- .entry-content -->
 
