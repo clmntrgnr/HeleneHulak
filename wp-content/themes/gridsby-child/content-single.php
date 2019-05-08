@@ -20,25 +20,28 @@
 						if( have_rows('images') ):
 							// loop through the rows of data
 								while ( have_rows('images') ) : $i++; the_row(); ?>
-										<div class="HH-image">
+										<section class="HH-image">
 											<div data-toggle="modal" data-target="#myModal<?php echo $i;?>">
 												<img src=<?php the_sub_field('image') ?> />												
 											</div>
+										</section>
+										<!-- Modal -->
+										<div class="modal fade" id="myModal<?php echo $i;?>" role="dialog">
+											<div class="modal-dialog">
+												<!-- Modal content-->
+												<div class="modal-content">
+													<img class="HH-image-full" src=<?php the_sub_field('image') ?> />												
+												</div>
+											</div>
 										</div>
-															<!-- Modal -->
-					<div class="modal fade" id="myModal<?php echo $i;?>" role="dialog">
-						<div class="modal-dialog">
-							<!-- Modal content-->
-							<div class="modal-content">
-								<img class="HH-image-full" src=<?php the_sub_field('image') ?> />												
-							</div>
-						</div>
-					</div>
 								<?php endwhile;
 						endif;
 					?>
 					<div class="HH-video">
-						<?php the_field('oembed'); ?>
+						<?php echo the_field('oembed'); ?>
+						<div class="embed-container">
+							<?php the_field('oembed'); ?>
+						</div>
 					</div>
 			</div>
 
