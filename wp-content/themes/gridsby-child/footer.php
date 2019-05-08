@@ -28,7 +28,7 @@
         <?php endif; ?>
         
         <?php if ( get_theme_mod( 'gridsby_footer_contact' ) ) : ?>
-        	<h3 class="email"><a href="mailto:<?php echo esc_html( get_theme_mod( 'gridsby_footer_contact' )); ?>" target="_blank"><?php echo esc_html( get_theme_mod( 'gridsby_footer_contact' )); ?></a></h3> 
+        	<h3 class="email"><?php echo esc_html( get_theme_mod( 'gridsby_footer_contact' )); ?></h3> 
         <?php endif; ?> 
         </div><!-- .site-info -->
 	</footer><!-- #colophon -->

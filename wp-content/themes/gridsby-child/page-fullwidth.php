@@ -10,19 +10,39 @@ get_header(); ?>
 <div class="grid grid-pad">
 	<div class="col-1-1 content-wrapper">
         <div id="primary" class="content-area">
-            <main id="main" class="site-main HH-about" role="main">
+            <main id="main" class="site-main HH-about HH-project" role="main">
     
                 <?php while ( have_posts() ) : the_post(); ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                  <div class="page-content">
-                    <div class="entry-img">
+                  <div class="page-content HH-content">
+                    <div class="entry-img HH-images">
                       <img src=<?php echo get_field('image'); ?>>
                     </div>
-                    <div class="entry-description">
+                    <div class="entry-description HH-text">
+                    <div>
                       <?php echo get_field('description'); ?>
-                      <div class="entry-contact">
-                        <?php echo get_field('cv'); ?>
                     </div>
+                    <div class="attribute">
+                      <?php echo get_field('email'); ?>
+                    </div>
+                    <div class="entry-description attribute">
+                      <?php echo get_field('address'); ?>
+                    </div>
+                    <?php 
+                    // check if the repeater field has rows of data
+                      if( have_rows('press_links') ):
+                        // loop through the rows of data
+                        while ( have_rows('press_links') ) : the_row(); ?>
+                        <div>
+                          <span><?php the_sub_field('title'); ?></span>: 
+                          <a href=<?php the_sub_field('url'); ?> target="_blank"><?php the_sub_field('url'); ?></a>
+                        </div>
+                        <?php endwhile;
+                      else :
+                        // no rows found
+                      endif;
+
+                      ?>
                     </div>
                   </div><!-- .entry-content -->
                 </article><!-- #post-## -->

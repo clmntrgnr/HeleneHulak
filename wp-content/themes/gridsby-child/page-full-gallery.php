@@ -10,24 +10,31 @@ get_header(); ?>
 	if ( get_the_ID() == 1883) { 
 	?>
 	<div class="HH-banner">
-		<div class="HH-title">Hé coucou je suis LN</div>
-		<div class="HH-news">
-			<?php
-			$arguments = array( 
-			'post_type' => 'post',
-			'tax_query' =>
-			array(
-			'taxonomy' => 'post_format',
-			'field' => 'slug',
-			));
+		<div class="HH-banner-background">
+			<div class="HH-title">Artiste plasticienne</div>
+			<div class="HH-news">
+				<div class="HH-news-title">Actualités</div>
+				<div class="HH-news-content">
+					<ul>
+					<?php
+					$arguments = array( 
+					'post_type' => 'post',
+					'tax_query' =>
+					array(
+					'taxonomy' => 'post_format',
+					'field' => 'slug',
+					));
 
-			$gridsby_query = new WP_Query( $arguments ); 
+					$gridsby_query = new WP_Query( $arguments ); 
 
-			while ( $gridsby_query->have_posts() ) : $gridsby_query->the_post();
-			if (!has_post_format( 'image' )) {
-			get_template_part( 'content' );
-			}
-			endwhile; ?>
+					while ( $gridsby_query->have_posts() ) : $gridsby_query->the_post();
+					if (!has_post_format( 'image' )) { ?>
+					<li><?php get_template_part( 'content' ); ?> </li>
+					<?php }
+					endwhile; ?>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 	<?php

@@ -38,13 +38,9 @@
 						endif;
 					?>
 					<div class="HH-video">
-						<?php echo the_field('oembed'); ?>
-						<div class="embed-container">
-							<?php the_field('oembed'); ?>
-						</div>
+						<?php echo the_field('video'); ?>
 					</div>
 			</div>
-
 			<div class="HH-text">
 				<div>
 					<?php echo get_field('year'); ?>
